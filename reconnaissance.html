@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reconnaissance — Herbier APG</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="recognize.css">
+</head>
+<body data-page="reconnaissance.html">
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="title-block">
+      <div class="eyebrow">Herbier numérique · Prototype</div>
+      <h1>Reconnaissance par <em>similarité visuelle</em></h1>
+    </div>
+  </header>
+
+  <div class="disclaimer">
+    <b>Comment ça marche, honnêtement :</b> ce n'est pas un modèle de vision entraîné à reconnaître des espèces
+    (il faudrait des centaines de photos par plante, on n'en a que 1 à 4 ici). C'est un moteur de
+    <em>similarité visuelle</em> : il compare les couleurs et leur disposition dans ta photo à celles des 533
+    planches du corpus, et te renvoie les plus proches. C'est un bon point de départ pédagogique, pas un
+    identificateur botanique fiable — vérifie toujours avec la fiche déjà connue.
+  </div>
+
+  <div class="upload-zone" id="drop-zone">
+    <input type="file" id="file-input" accept="image/*" hidden>
+    <div id="drop-inner">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+      <div class="drop-label">Dépose une photo de plante ici, ou clique pour en choisir une</div>
+      <div class="drop-sub">JPG, PNG… traitée entièrement dans ton navigateur, jamais envoyée nulle part</div>
+    </div>
+  </div>
+
+  <div id="result-area"></div>
+
+  <footer class="foot">
+    Comparaison faite sur un vecteur couleur 8×8 par image (192 valeurs), calculé localement — aucune donnée ne quitte ce navigateur.
+  </footer>
+</div>
+
+<div id="overlay" class="overlay hidden">
+  <div id="sheet" class="sheet"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="features.js"></script>
+<script src="recognize.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

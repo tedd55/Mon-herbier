@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herbier — Classification APG</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="index.html">
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="title-block">
+      <div class="eyebrow">Herbier numérique · Classification phylogénétique APG</div>
+      <h1>Recherche <em>botanique</em></h1>
+    </div>
+    <div class="counter">
+      <b id="result-count">0</b>
+      sur <span id="total-count">0</span> planches
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input id="search" type="text" placeholder="Genre, espèce, nom commun, famille…" autofocus>
+    </div>
+    <select id="group-filter">
+      <option value="">Tous les groupes</option>
+    </select>
+    <label class="chip-toggle">
+      <input type="checkbox" id="photo-only">
+      Avec photo uniquement
+    </label>
+  </div>
+
+  <div id="grid" class="grid"></div>
+
+  <footer class="foot">
+    Données extraites automatiquement du document PDF de classification APG — 263 taxons répertoriés.
+  </footer>
+</div>
+
+<div id="overlay" class="overlay hidden">
+  <div id="sheet" class="sheet"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

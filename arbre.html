@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbre — Herbier APG</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tree.css">
+</head>
+<body data-page="arbre.html">
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="title-block">
+      <div class="eyebrow">Herbier numérique · Classification phylogénétique APG</div>
+      <h1>Arbre de <em>classification</em></h1>
+    </div>
+    <div class="counter">
+      <b id="node-count">0</b>
+      taxons affichés
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input id="tree-search" type="text" placeholder="Chercher un taxon, une famille, une espèce…">
+    </div>
+    <button class="btn" id="expand-all">Tout déplier</button>
+    <button class="btn" id="collapse-all">Tout replier</button>
+  </div>
+
+  <div class="tree-legend">
+    <span><i class="dot group"></i> Groupe / rang taxonomique</span>
+    <span><i class="dot leaf"></i> Espèce (cliquable, fiche détaillée)</span>
+  </div>
+
+  <div id="tree-root" class="tree-root"></div>
+
+  <footer class="foot">
+    375 taxons, du phylum jusqu'à l'espèce — cliquer une espèce ouvre sa fiche avec photos.
+  </footer>
+</div>
+
+<div id="overlay" class="overlay hidden">
+  <div id="sheet" class="sheet"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="tree_data.js"></script>
+<script src="tree.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

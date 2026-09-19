@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — Herbier APG</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body data-page="quiz.html">
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="title-block">
+      <div class="eyebrow">Herbier numérique · Entraînement</div>
+      <h1>Quiz de <em>reconnaissance</em></h1>
+    </div>
+    <div class="counter">
+      <b id="score-display">0 / 0</b>
+      score de la session
+    </div>
+  </header>
+
+  <div class="controls">
+    <select id="mode-select">
+      <option value="latin">Deviner le nom latin</option>
+      <option value="common">Deviner le nom commun</option>
+      <option value="family">Deviner la famille</option>
+    </select>
+    <select id="group-select">
+      <option value="">Tous les groupes</option>
+    </select>
+    <label class="chip-toggle">
+      <input type="checkbox" id="srs-mode" checked>
+      Prioriser mes cartes à revoir
+    </label>
+    <button class="btn" id="reset-stats">Réinitialiser mes stats</button>
+  </div>
+
+  <div id="quiz-area"></div>
+
+  <div id="stats-panel" class="stats-panel"></div>
+
+  <footer class="foot">
+    Le score de chaque carte détermine sa priorité de réapparition (répétition espacée légère, stockée dans ce navigateur uniquement).
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script src="quiz.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
